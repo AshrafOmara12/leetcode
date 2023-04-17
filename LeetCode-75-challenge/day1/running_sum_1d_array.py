@@ -2,7 +2,7 @@
 
 # answer
 class Solution:
-    def runningSum(self, nums: List[int]) -> List[int]:
+    def runningSum(self, nums: list[int]) -> list[int]:
         sums = []
         for i in range(len(nums)):
             if len(sums) == 0:
