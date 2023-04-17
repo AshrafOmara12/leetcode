@@ -1,3 +1,3 @@
 # leetcode
 
-Leetcode 75 Problem solving challenge solution
+Leetcode 75 Problem solving challenge solution and SQL study plan.
