@@ -1,0 +1,6 @@
+problem link: https://leetcode.com/problems/patients-with-a-condition/?envType=study-plan&id=sql-i
+
+# Write your MySQL query statement below
+select * from Patients
+where conditions COLLATE utf8_general_ci like 'DIAB1%' or 
+conditions COLLATE utf8_general_ci like '% DIAB1%';

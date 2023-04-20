@@ -1,0 +1,12 @@
+problem link: https://leetcode.com/problems/calculate-special-bonus/?envType=study-plan&id=sql-i
+
+# Write your MySQL query statement below
+select 
+	emp.employee_id,
+case 
+	when (emp.employee_id % 2 <> 0 and emp.name not like 'M%') then emp.salary
+	else 0
+end as bonus
+from employees as emp
+order by 1
+;
