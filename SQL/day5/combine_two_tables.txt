@@ -1,0 +1,7 @@
+problem link: https://leetcode.com/problems/combine-two-tables/?envType=study-plan&id=sql-i
+
+# Write your MySQL query statement below
+select p.firstName, p.lastName, d.city, d.state
+from Person as p 
+LEFT OUTER JOIN Address as d
+on p.personId = d.personId 
