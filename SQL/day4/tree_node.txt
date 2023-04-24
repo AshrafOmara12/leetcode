@@ -1,0 +1,8 @@
+problem link:https://leetcode.com/problems/tree-node/submissions/937917365/?envType=study-plan&id=sql-i
+# Write your MySQL query statement below
+select id,
+(case 
+	when t.p_id is null then 'Root'
+ 	when t.id not in (select distinct p_id from tree where p_id is not null) then 'Leaf'
+	else 'Inner' end )  as type
+from tree as t ;

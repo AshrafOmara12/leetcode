@@ -1,0 +1,15 @@
+problem link: https://leetcode.com/problems/employees-with-missing-information/description/?envType=study-plan&id=sql-i
+
+
+# Write your MySQL query statement below
+with cte1 as (
+	select s.employee_id
+from employees as e  right join salaries as s on e.employee_id = s.employee_id
+where e.name is null or s.salary is null ),
+
+cte2 as (
+	select e.employee_id
+from employees as e  left join salaries as s on e.employee_id = s.employee_id
+where e.name is null or s.salary is null )
+
+select * from cte1 union select * from cte2 order by 1 asc;
