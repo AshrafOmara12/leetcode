@@ -1,0 +1,12 @@
+problem link: https://leetcode.com/problems/second-highest-salary/?envType=study-plan&id=sql-i
+
+# Write your MySQL query statement below
+select
+(case when (select count(distinct salary) from Employee) > 1 
+ then (select salary from (
+select DENSE_RANK() OVER (ORDER BY salary desc) AS row_num, salary
+from Employee ) subquery
+where row_num = 2 limit 1) else null end) as SecondHighestSalary  from Employee limit 1;
+
+#another solution:
+select max(salary) AS SecondHighestSalary from employee where salary not in (select max(salary) from employee)
